@@ -1,0 +1,19 @@
+// Custom Variable (This variable order matter)
+// Redefine variable come first. Otherwise, below two import file doesn't use this variable
+$primary: #c29938;
+$light: #fbf5e5;
+
+// import the functions & variables (For add custom map to existing bootstrap main map in _variables.scss (Import Order Matter)
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+
+// Custom Map
+$custom-theme-colors: (
+  "altlight": #f2ebfa,
+  "altdark": #522192,
+);
+
+$theme-colors: map-merge($custom-theme-colors, $theme-colors);
+
+// Import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap';
